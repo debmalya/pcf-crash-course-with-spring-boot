@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class QuoteController {
 
+	@GetMapping(path = "/health")
+	public String helloWorld() {
+		return "OK";
+	}
+
 	@GetMapping("/quote")
 	public String getQuote(){
 		return new Quote().getQuote();
